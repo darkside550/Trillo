@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
 
-    @media only screen and (max-width: $bp-smallest){
+    @media only screen and (max-width: $bp-smallest) {
         order: 1;
         flex: 0 0 100%;
         background-color: var(--color-grey-light-2);
@@ -205,7 +205,7 @@
         align-items: center;
 
         @media only screen and(max-width:$bp-medium) {
-            justify-content: center;   
+            justify-content: center;
             padding: 2rem;
         }
 
@@ -221,14 +221,14 @@
         height: 1.75rem;
         margin-right: 2rem;
         fill: currentColor; // Color of the current element or the parent element
-    
+
         @media only screen and(max-width:$bp-small) {
             margin-right: 0;
             margin-bottom: .7rem;
             width: 1.5rem;
             height: 1.5rem;
         }
-    
+
     }
 
 }
@@ -325,7 +325,7 @@
         justify-content: center;
 
         @media only screen and(max-width:$bp-small) {
-           padding: 0 1.5rem;
+            padding: 0 1.5rem;
         }
 
     }
@@ -438,16 +438,19 @@
         margin-right: .7rem;
 
         // Older Browsers
-        // background-image: url(../img/chevron-thin-right.svg);
-        // background-size: cover;
+        background-image: url(../img/chevron-thin-right.svg);
+        background-size: cover;
 
         // New Browsers
-        background-color: var(--color-primary);
-        -webkit-mask-image: url(../img/chevron-thin-right.svg);
-        -webkit-mask-size: cover;
-        mask-image: url(../img/chevron-thin-right.svg);
-        mask-size: cover;
-    }
+        @supports (-webkit-mask-image: url()) or (mask-image:url()) {
+            background-color: var(--color-primary);
+            -webkit-mask-image: url(../img/chevron-thin-right.svg);
+            -webkit-mask-size: cover;
+            mask-image: url(../img/chevron-thin-right.svg);
+            mask-size: cover;
+            background-image: none;
+        }
+     }
 }
 
 ///////////////////////////
