@@ -9,9 +9,14 @@
 }
 
 .header{
+    font-size: 1.4rem;
     height: 7rem;
     background-color: #fff;
     border-bottom: var(--color-grey-light-2);
+
+    display: flex;
+    justify-content: space-between; // Content gets evnly spaced from each other
+    align-items: center; // aligns 
 }
 
 .content{
